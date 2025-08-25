@@ -24,3 +24,7 @@ body {
     aspect-ratio: 1;
     flex-shrink: 1;
 }
+
+.colored {
+    background-color: black;
+}
