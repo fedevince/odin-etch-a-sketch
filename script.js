@@ -1,8 +1,7 @@
-//TODO
-// Create 16 x 16 div grid, set flexbox to wrap them
 let size = 16;
 const container = document.querySelector(".container");
 
+// named handler function for the event handler
 function colorBox(e) {
     e.target.classList.add("colored")
 }
@@ -19,7 +18,7 @@ function createGrid(size){
         box.classList.add("box");
         box.style.width = `${100/size}%`;
         container.appendChild(box);
-        box.addEventListener("mouseleave", colorBox)
+        box.addEventListener("mouseenter", colorBox)
     }}}
 
 createGrid(size);
@@ -34,5 +33,19 @@ let boxes = document.querySelectorAll(".box");
 // Button on the top of the screen asking for the number of squares in the grid
 // Remove existing grid; new one in the same space
 
+let btn = document.querySelector('button')
+
+btn.addEventListener('click', () => {
+    size = Number(prompt("Enter size of the grid:"))
+    while (true) {
+        if (size <= 100 && size > 1) {
+            break
+        }
+        size = Number(prompt("Enter a number between 1 and 100!"));
+    } 
+    createGrid(size);
+})
+
 // EXTRA: randomize squares RGB values
 // EXTRA: progressive darkening 
+// rubber function with command click?
