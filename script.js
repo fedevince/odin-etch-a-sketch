@@ -2,15 +2,18 @@
 // Create 16 x 16 div grid, set flexbox to wrap them
 let size = 16;
 const container = document.querySelector(".container");
-function createGrid(size)
+function createGrid(size){
     // delete existing grid
-    // size limited to screen
+    for (let i = container.childElementCount; i > 0; i--) {
+        container.removeChild(container.childNodes[i]);
+    }
+    // TODO fix size when larger than 17
     {for (let i = 0; i < size * size; i++) {
         let box = document.createElement("div");
         box.classList.add("box");
         box.style.width = `${100/size}%`;
         container.appendChild(box);
-    }}
+    }}}
 
 createGrid(size);
 // create container

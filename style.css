@@ -15,10 +15,12 @@ body {
     flex-wrap: wrap;
     flex: auto;
     width: 60%;
+    height: 50%;
 }
 
 .box {
     border: solid grey 1px;
     padding: 10px;
     aspect-ratio: 1;
+    flex-shrink: 1;
 }
