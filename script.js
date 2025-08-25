@@ -27,6 +27,7 @@ let btn = document.querySelector('button')
 
 btn.addEventListener('click', () => {
     size = Number(prompt("Enter size of the grid:"))
+    if (!size) size = 16;
     while (true) {
         if (size <= 100 && size > 1) {
             break
