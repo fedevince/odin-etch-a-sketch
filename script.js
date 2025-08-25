@@ -4,12 +4,11 @@ let size = 16;
 const container = document.querySelector(".container");
 function createGrid(size)
     // delete existing grid
-    // not square? 
+    // size limited to screen
     {for (let i = 0; i < size * size; i++) {
         let box = document.createElement("div");
         box.classList.add("box");
         box.style.width = `${100/size}%`;
-        box.style.height = box.width;
         container.appendChild(box);
     }}
 
