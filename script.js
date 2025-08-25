@@ -1,5 +1,6 @@
 let size = 16;
 const container = document.querySelector(".container");
+let boxes = document.querySelectorAll(".box");
 
 // named handler function for the event handler
 function colorBox(e) {
@@ -7,31 +8,19 @@ function colorBox(e) {
 }
 
 function createGrid(size){
-    // delete existing grid
     for (let i = document.querySelectorAll(".box").length; i > 0; i--) {
         container.removeChild(container.childNodes[i]);
     }
-    // TODO fix size when larger than 17
-    // figure out why chldnodelist has an extra text item
     {for (let i = 0; i < size * size; i++) {
         let box = document.createElement("div");
         box.classList.add("box");
         box.style.width = `${100/size}%`;
         container.appendChild(box);
         box.addEventListener("mouseenter", colorBox)
+        boxes = document.querySelectorAll(".box");
     }}}
 
-createGrid(size);
-// create container
-// append 16 x 16 divs to it
 
-// Set up hover effect
-let boxes = document.querySelectorAll(".box");
-// for (box of boxes) {
-//     box.addEventListener("mouseenter", () => box.classList.add("colored"));
-// }
-// Button on the top of the screen asking for the number of squares in the grid
-// Remove existing grid; new one in the same space
 
 let btn = document.querySelector('button')
 
@@ -46,6 +35,24 @@ btn.addEventListener('click', () => {
     createGrid(size);
 })
 
+// figure out how to toggle off a listener
+let eraser = document.querySelector("#eraser");
+
+function erase(){
+    boxes.forEach(box => box.addEventListener("mouseenter", ()=>box.classList.remove('colored')));
+}
+
+eraser.addEventListener("click", erase);
+
+let pen = document.querySelector("#pen");
+
+function color(){
+    boxes.forEach(box => box.addEventListener("mouseenter", ()=> box.classList.add("colored")))
+}
+
+pen.addEventListener("click", color)
 // EXTRA: randomize squares RGB values
 // EXTRA: progressive darkening 
 // rubber function with command click?
+
+createGrid(size);
