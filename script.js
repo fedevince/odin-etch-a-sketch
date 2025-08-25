@@ -18,6 +18,7 @@ function createGrid(size){
         container.appendChild(box);
         box.addEventListener("mouseenter", colorBox)
         boxes = document.querySelectorAll(".box");
+        pen.classList.add('on')
     }}}
 
 
@@ -40,6 +41,8 @@ let eraser = document.querySelector("#eraser");
 
 function erase(){
     boxes.forEach(box => box.addEventListener("mouseenter", ()=>box.classList.remove('colored')));
+    eraser.classList.add("on")
+    pen.classList.remove('on')
 }
 
 eraser.addEventListener("click", erase);
@@ -48,11 +51,12 @@ let pen = document.querySelector("#pen");
 
 function color(){
     boxes.forEach(box => box.addEventListener("mouseenter", ()=> box.classList.add("colored")))
+    eraser.classList.remove("on")
+    pen.classList.add('on')
 }
 
 pen.addEventListener("click", color)
 // EXTRA: randomize squares RGB values
 // EXTRA: progressive darkening 
-// rubber function with command click?
 
 createGrid(size);
