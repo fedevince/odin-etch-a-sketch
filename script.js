@@ -58,6 +58,14 @@ function color(){
 
 pen.addEventListener("click", color)
 // EXTRA: randomize squares RGB values
+
+function randomRGB() {
+    return Math.floor(Math.random() * 255);
+}
+
+function colorRandom(e){
+    e.target.style.backgroundColor = `rgb(${randomRGB()},${randomRGB()}, ${randomRGB})`
+}
 // EXTRA: progressive darkening 
 
 createGrid(size);
