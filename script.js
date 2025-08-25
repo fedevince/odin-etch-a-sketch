@@ -67,5 +67,6 @@ function colorRandom(e){
     e.target.style.backgroundColor = `rgb(${randomRGB()},${randomRGB()}, ${randomRGB})`
 }
 // EXTRA: progressive darkening 
+// Set keys to activate buttons
 
 createGrid(size);
