@@ -24,7 +24,6 @@ body {
 
 .box {
     border: solid grey 1px;
-    padding: 10px;
     aspect-ratio: 1;
     flex-shrink: 1;
 }
